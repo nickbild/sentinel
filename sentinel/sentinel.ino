@@ -10,7 +10,7 @@
 
 Adafruit_NeoPixel pixels(1, ledPin, NEO_GRB + NEO_KHZ800);
 
-float duration, distance;
+float distance;
 
 void setup() {
   pinMode(trigPin, OUTPUT);
@@ -22,6 +22,20 @@ void setup() {
 }
 
 void loop() {
+  distance = getDistanceInCm();
+  Serial.print("Distance: ");
+  Serial.println(distance);
+
+  if (distance < minDist) {
+    flashLED();
+  }
+  
+  delay(100);
+}
+
+float getDistanceInCm() {
+  float duration, distance;
+  
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2);
   digitalWrite(trigPin, HIGH);
@@ -30,18 +44,16 @@ void loop() {
 
   duration = pulseIn(echoPin, HIGH);
   distance = (duration * 0.0343) / 2;
-  Serial.print("Distance: ");
-  Serial.println(distance);
 
-  if (distance < minDist) {
-    pixels.setPixelColor(0, pixels.Color(25, 0, 0));
+  return distance;
+}
+
+void flashLED() {
+  pixels.setPixelColor(0, pixels.Color(25, 0, 0));
     pixels.show();
     
     delay(2000);
 
     pixels.setPixelColor(0, pixels.Color(0, 0, 0));
     pixels.show();
-  }
-  
-  delay(100);
 }
