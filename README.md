@@ -10,7 +10,7 @@ Sentinel was designed to provide a subtle reminder not to touch your face.  When
 
 ## How it Works
 
-An ultrasonic distance sensor is mounted at an angle on a pair of glasses.  When an object is detected in close proximity, a red warning LED on the frame of the glasses is illuminated.  Processing is handled by an Arduino Nano 33 IoT.
+An ultrasonic distance sensor is mounted at an angle on a pair of glasses.  When an object is detected in close proximity, a red warning LED on the frame of the glasses is illuminated.  Processing is handled by an Arduino Nano 33 IoT ([code here](https://github.com/nickbild/sentinel/blob/master/sentinel/sentinel.ino)).
 
 ## Media
 
