@@ -6,7 +6,7 @@
 #define ledPin     6
 #define trigPin    9
 #define echoPin    10
-#define minDist    100
+#define minDist    30
 
 Adafruit_NeoPixel pixels(1, ledPin, NEO_GRB + NEO_KHZ800);
 
