@@ -31,6 +31,7 @@ Inside:
 - 1 x Arduino Nano 33 IoT
 - 1 x Ultrasonic distance sensor
 - 1 x Adafruit NeoPixel 5050 RGB LED
+- 1 x Logic level shifter (or resistors to form a voltage divider)
 - 1 x Battery pack
 - Miscellaneous wire
 
